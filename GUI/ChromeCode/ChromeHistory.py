@@ -12,7 +12,7 @@ class HP():
 
 #Basic HistoryParser pulling only urls
 
-        with sqlite3.connect('C:\Users\Lewis Collins\AppData\Local\Google\Chrome\User Data\Default\History') as conn:
+        with sqlite3.connect('C:\Users\INSERT OWN PATH\Data\Default\History') as conn:
             conn.text_factory = str
             c = conn.cursor()
             output_file_path = 'Chrome_Hist.csv'
