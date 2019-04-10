@@ -1,10 +1,11 @@
 import os
+import settings
 
 
 # Create queue and crawled files (if not created)
 def create_files():
-    crawled = 'C:/Users/Lewis Collins/FinalProjectV3.0/GUI/HistoryForensics/CrawledUrls.txt'
-    keywords = 'C:/Users/Lewis Collins/FinalProjectV3.0/GUI/HistoryForensics/keywords.txt'
+    crawled = settings.PATH + '/HistoryForensics/CrawledUrls.txt'
+    keywords = settings.PATH + '/HistoryForensics/keywords.txt'
     if not os.path.isfile(crawled):
         write_file(crawled, '')
     if not os.path.isfile(keywords):
@@ -27,8 +28,6 @@ def append_to_file(path, data):
 def delete_file_contents(path):
     with open(path, 'w'):
         pass
-
-
 
 
 # Read a file and convert each line to set items
