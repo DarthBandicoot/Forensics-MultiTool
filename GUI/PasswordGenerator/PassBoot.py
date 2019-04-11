@@ -2,14 +2,10 @@ from PassInfo import *
 
 
 class Pass:
-
-
     directory = '/PasswordGenerator/'
     PWNumCombo_file = ''
     PWSpecCombo_file = ''
     PWMultiCombo_file = ''
-
-
 
     def __init__(self, directory):
         Pass.directory = directory
@@ -21,6 +17,3 @@ class Pass:
     @staticmethod
     def boot():
         create_files(Pass.directory)
-
-
-

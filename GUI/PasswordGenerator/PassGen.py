@@ -2,11 +2,12 @@ import string
 import random
 from PassInfo import *
 from PassBoot import *
+import settings
 
 Directory = '/PasswordGenerator'
-PWNum_Combo = Directory + 'C:/Users/Lewis Collins/FinalProjectV3.0/GUI/PasswordGenerator/PWNumCombo.txt'
-PWSpec_Combo = Directory +'C:/Users/Lewis Collins/FinalProjectV3.0/GUI/PasswordGenerator/PWSpecCombo.txt'
-#PwMulti_Combo = ''
+PWNum_Combo = Directory + settings.PATH + '/PasswordGenerator/PWNumCombo.txt'
+PWSpec_Combo = Directory + settings.PATH + '/PasswordGenerator/PWSpecCombo.txt'
+# PwMulti_Combo = ''
 Pass(Directory)
 
 words = []
@@ -28,7 +29,7 @@ num_lines2 = sum(1 for line in Symbols)
 word_list = open(keywordPath, "r")
 for i in range(num_lines1):
     line = word_list.readline()
-    if len(line)>3:
+    if len(line) > 3:
         words.append(line)
 
 Symbols = open(SymbolPath, "r")
@@ -37,15 +38,12 @@ for j in range(num_lines2):
     characters.append(line)
 
 
-
 class PassGenClass():
 
     @staticmethod
     def PWNumCombo():
 
-
-
-        output_file = open ("PasswordGenerator/PWNumCombo.txt", "a+")
+        output_file = open("PasswordGenerator/PWNumCombo.txt", "a+")
 
         for k in range(50):
             index = random.randrange(len(words))
@@ -54,14 +52,12 @@ class PassGenClass():
             password = password + str(index)
 
             output_file.write(password + "\n")
-        #output_file.close()
-
+        # output_file.close()
 
     @staticmethod
     def PWSpecCombo():
 
-
-        output_file = open ("PasswordGenerator/PWSpecCombo.txt", "a+")
+        output_file = open("PasswordGenerator/PWSpecCombo.txt", "a+")
 
         for k in range(50):
             flag = 0
@@ -70,9 +66,9 @@ class PassGenClass():
                 password = words[index]
                 decision = random.randrange(14)
 
-
                 for f in range(len(password)):
-                    if password[f] == "a" or password[f] == "i" or password[f] == "s" or password[f] == "A" or password[f] == "I" or password[f] == "S":
+                    if password[f] == "a" or password[f] == "i" or password[f] == "s" or password[f] == "A" or password[
+                        f] == "I" or password[f] == "S":
                         flag = flag + 1
 
                     if decision <= 2:
@@ -108,8 +104,6 @@ class PassGenClass():
                         password = password.replace("I", "!")
 
             output_file.write(password)
-        #output_file.close()
+        # output_file.close()
 
         print(password)
-
-

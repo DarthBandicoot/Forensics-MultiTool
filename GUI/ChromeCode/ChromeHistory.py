@@ -3,14 +3,12 @@ import csv
 from datetime import datetime, timedelta
 
 
-
 class HP():
 
     def HistParser(self):
-
         HistStatement = 'SELECT url FROM urls'
 
-#Basic HistoryParser pulling only urls
+        # Basic HistoryParser pulling only urls
 
         with sqlite3.connect('C:\Users\INSERT OWN PATH\Data\Default\History') as conn:
             conn.text_factory = str
